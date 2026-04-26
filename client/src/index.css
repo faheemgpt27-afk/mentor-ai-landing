@@ -5,6 +5,32 @@ html {
   scroll-behavior: smooth;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+  mix-blend-mode: normal;
+}
+
+[data-theme-direction="to-light"]::view-transition-old(root) {
+  z-index: 1;
+}
+
+[data-theme-direction="to-light"]::view-transition-new(root) {
+  z-index: 2;
+}
+
+[data-theme-direction="to-dark"]::view-transition-old(root) {
+  z-index: 2;
+}
+
+[data-theme-direction="to-dark"]::view-transition-new(root) {
+  z-index: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

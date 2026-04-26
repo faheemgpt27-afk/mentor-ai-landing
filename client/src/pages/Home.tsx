@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, CheckCircle, Trophy, Flame, Users, MessageSquare, Moon, Sun, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useIsMobile } from "@/hooks/useMobile";
 
@@ -15,8 +15,9 @@ import { useIsMobile } from "@/hooks/useMobile";
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleThemeWithAnimation } = useTheme();
   const isMobile = useIsMobile();
+  const themeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,25 @@ export default function Home() {
       setMobileMenuOpen(false);
     }
   }, [isMobile, mobileMenuOpen]);
+
+  const handleThemeToggle = (e?: React.MouseEvent) => {
+    if (toggleThemeWithAnimation) {
+      const target = e?.currentTarget as HTMLElement | undefined;
+      if (target) {
+        const rect = target.getBoundingClientRect();
+        toggleThemeWithAnimation({
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        });
+      } else if (themeButtonRef.current) {
+        const rect = themeButtonRef.current.getBoundingClientRect();
+        toggleThemeWithAnimation({
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        });
+      }
+    }
+  };
 
   const navLinks = [
     { href: "#features", label: "Features" },
@@ -55,8 +75,9 @@ export default function Home() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleTheme}
+              onClick={(e) => handleThemeToggle(e)}
               className="rounded-full"
+              ref={themeButtonRef}
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -68,7 +89,7 @@ export default function Home() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleTheme}
+              onClick={(e) => handleThemeToggle(e)}
               className="rounded-full"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
