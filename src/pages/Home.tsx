@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Target, CheckCircle, Trophy, Flame, Users, MessageSquare, Moon, Sun, Menu, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from "@/components/common/ThemeContext";
 import { useIsMobile } from "@/hooks/useMobile";
 
 /**
