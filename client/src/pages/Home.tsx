@@ -118,17 +118,17 @@ export default function Home() {
             {/* Left Content - Takes 5 columns */}
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-6">
-                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                  <span className="text-sm font-bold text-primary uppercase tracking-wider">AI-Powered Mentorship</span>
+                <div className="inline-block px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                  <span className="text-sm font-bold text-primary">AI-Powered Mentorship</span>
                 </div>
                 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  Stop
-                  <br />
+                <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                  Stop {" "}
+                  {/* <br /> */}
                   <span className="text-primary">Consuming</span>
                   <br />
-                  Start
-                  <br />
+                  Start {" "}
+                  {/* <br /> */}
                   <span className="text-primary">Becoming</span>
                 </h1>
                 
