@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Target, CheckCircle, Trophy, Flame, Users, MessageSquare } from "lucide-react";
+import { ArrowRight, Zap, Target, CheckCircle, Trophy, Flame, Users, MessageSquare, Moon, Sun, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { useIsMobile } from "@/hooks/useMobile";
 
 /**
  * Design System: Professional OKLCH Theme
@@ -12,6 +14,9 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,19 +26,82 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen && !isMobile) {
+      setMobileMenuOpen(false);
+    }
+  }, [isMobile, mobileMenuOpen]);
+
+  const navLinks = [
+    { href: "#features", label: "Features" },
+    { href: "#mentors", label: "Mentors" },
+    { href: "#testimonials", label: "Testimonials" },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur border-b border-border" : "bg-transparent"}`}>
         <div className="container flex items-center justify-between py-4">
           <div className="text-2xl font-bold text-primary">MENTOR AI</div>
-          <div className="flex gap-8 items-center">
-            <a href="#features" className="text-sm uppercase hover:text-primary transition">Features</a>
-            <a href="#mentors" className="text-sm uppercase hover:text-primary transition">Mentors</a>
-            <a href="#testimonials" className="text-sm uppercase hover:text-primary transition">Testimonials</a>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-8 items-center">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="text-sm uppercase hover:text-primary transition">
+                {link.label}
+              </a>
+            ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold">Join Now</Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden gap-2 items-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="rounded-full"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur pb-4">
+            <div className="flex flex-col gap-4 pt-4">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.href} 
+                  href={link.href} 
+                  className="text-sm uppercase hover:text-primary transition px-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold mx-4">Join Now</Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
