@@ -3,11 +3,11 @@ import { ArrowRight, Zap, Target, CheckCircle, Trophy, Flame, Users, MessageSqua
 import { useEffect, useState } from "react";
 
 /**
- * Design System: Neon Cyberpunk Discipline
- * - Deep charcoal backgrounds (#0a0e27) with electric cyan (#00ffff) and hot magenta (#ff00ff) accents
- * - Space Mono for headlines (bold, all-caps, monospace)
- * - Glitch effects, neon borders, and pulsing glow animations
- * - Asymmetric layouts with diagonal cuts and layered depth
+ * Design System: Professional OKLCH Theme
+ * - Clean, sophisticated color palette with blue-purple tones
+ * - Real-world photography for authentic connection
+ * - Minimalist, modern design with subtle interactions
+ * - Focus on clarity and genuine user transformation
  */
 
 export default function Home() {
@@ -24,33 +24,31 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur border-b border-primary/20" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur border-b border-border" : "bg-transparent"}`}>
         <div className="container flex items-center justify-between py-4">
-          <div className="text-2xl font-bold neon-text-glow">MENTOR AI</div>
+          <div className="text-2xl font-bold text-primary">MENTOR AI</div>
           <div className="flex gap-8 items-center">
             <a href="#features" className="text-sm uppercase hover:text-primary transition">Features</a>
             <a href="#mentors" className="text-sm uppercase hover:text-primary transition">Mentors</a>
             <a href="#testimonials" className="text-sm uppercase hover:text-primary transition">Testimonials</a>
-            <Button className="bg-primary text-background hover:bg-primary/80 uppercase font-bold">Join Now</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold">Join Now</Button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Background gradient and circuit pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-50"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        {/* Subtle background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-40"></div>
 
         <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="text-primary">STOP</span> CONSUMING
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                Stop Consuming
                 <br />
-                <span className="text-secondary">START</span> BECOMING
+                <span className="text-primary">Start Becoming</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-md">
                 Mentor AI gives you real challenges, tracks your growth, and holds you accountable. Your personal AI mentor that pushes you to grow — not just talk.
@@ -58,11 +56,11 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-primary text-background hover:bg-primary/80 uppercase font-bold text-lg py-6 px-8 neon-glow group">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-lg py-6 px-8 group">
                 Start Your Journey
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
               </Button>
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/10 uppercase font-bold text-lg py-6 px-8">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 uppercase font-bold text-lg py-6 px-8">
                 Try Demo
               </Button>
             </div>
@@ -74,34 +72,34 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground">Active Users</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-secondary">4.9★</div>
+                <div className="text-3xl font-bold text-primary">4.9★</div>
                 <div className="text-sm text-muted-foreground">User Rating</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-accent">87%</div>
+                <div className="text-3xl font-bold text-primary">87%</div>
                 <div className="text-sm text-muted-foreground">Goal Success Rate</div>
               </div>
             </div>
           </div>
 
           {/* Right Visual */}
-          <div className="relative h-96 lg:h-full min-h-96">
+          <div className="relative h-96 lg:h-full min-h-96 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/hero-mentor-ai-HAztV5jYhXqxsgHdF8yg93.webp" 
-              alt="Mentor AI Interface" 
-              className="w-full h-full object-cover rounded-lg neon-border float-up"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/hero-real-mentor-BSQCKNyoQSm76LY7ekrpRA.webp" 
+              alt="Mentor AI - Focused Professional" 
+              className="w-full h-full object-cover float-up"
             />
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/50 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
 
       {/* Problem Section */}
-      <section className="relative py-20 bg-gradient-to-b from-background to-card/30">
+      <section className="relative py-20 bg-secondary/5">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-primary">YOU'RE</span> STUCK IN A LOOP
+              You're Stuck in a Loop
             </h2>
             <p className="text-lg text-muted-foreground">
               You consume endless content, watch motivational videos, and make promises to yourself. But nothing changes. You lack accountability, discipline, and a system that actually works.
@@ -110,14 +108,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: "🔄", title: "Endless Consumption", desc: "You scroll, watch, and read but never act. Information without action is just noise." },
+              { icon: "📚", title: "Endless Consumption", desc: "You scroll, watch, and read but never act. Information without action is just noise." },
               { icon: "😴", title: "Lack of Discipline", desc: "Motivation fades. You need structure, not inspiration. Real growth requires daily habits." },
               { icon: "👥", title: "No Accountability", desc: "Nobody's watching. You make excuses. You need someone (or something) to hold you accountable." },
               { icon: "📉", title: "No Progress Tracking", desc: "You can't measure what you don't track. Without visibility, growth becomes invisible." },
             ].map((problem, idx) => (
-              <div key={idx} className="p-6 rounded-lg neon-border bg-card/50 hover:bg-card/80 transition">
+              <div key={idx} className="p-6 rounded-lg subtle-border bg-card/50 card-hover">
                 <div className="text-4xl mb-4">{problem.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-secondary">{problem.title}</h3>
+                <h3 className="text-xl font-bold mb-2">{problem.title}</h3>
                 <p className="text-muted-foreground">{problem.desc}</p>
               </div>
             ))}
@@ -130,7 +128,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-primary">MENTOR AI</span> CHANGES THE GAME
+              Mentor AI Changes the Game
             </h2>
             <p className="text-lg text-muted-foreground">
               We don't motivate you. We challenge you. We don't give advice. We hold you accountable.
@@ -155,11 +153,11 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="relative h-96">
+            <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/proof-submission-mockup-DmtN6C8bPeTB8hQVg6YTsL.webp" 
-                alt="Proof Submission" 
-                className="w-full h-full object-cover rounded-lg neon-border-magenta"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/person-working-deep-focus-FBE2fcaSFCWzjHPDkEdAYd.webp" 
+                alt="Deep Focus Work" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -167,10 +165,10 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="relative py-20 bg-gradient-to-b from-background to-card/30">
+      <section id="features" className="relative py-20 bg-secondary/5">
         <div className="container">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-            <span className="text-secondary">CORE</span> FEATURES
+            Core Features
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -184,8 +182,8 @@ export default function Home() {
             ].map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <div key={idx} className="p-6 rounded-lg neon-border bg-card/50 hover:neon-glow transition group cursor-pointer">
-                  <Icon className="w-12 h-12 text-primary mb-4 group-hover:text-secondary transition" />
+                <div key={idx} className="p-6 rounded-lg subtle-border bg-card/50 card-hover">
+                  <Icon className="w-12 h-12 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.desc}</p>
                 </div>
@@ -199,7 +197,7 @@ export default function Home() {
       <section className="relative py-20">
         <div className="container">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-            HOW IT <span className="text-primary">WORKS</span>
+            How It Works
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
@@ -211,7 +209,7 @@ export default function Home() {
               { step: "5", title: "Level Up & Grow", icon: "🚀" },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full neon-border flex items-center justify-center mb-4 bg-card/50">
+                <div className="w-20 h-20 rounded-full subtle-border flex items-center justify-center mb-4 bg-card/50">
                   <div className="text-4xl">{item.icon}</div>
                 </div>
                 <div className="text-sm font-bold text-primary mb-2">STEP {item.step}</div>
@@ -224,25 +222,28 @@ export default function Home() {
       </section>
 
       {/* Mentors Showcase */}
-      <section id="mentors" className="relative py-20 bg-gradient-to-b from-background to-card/30">
+      <section id="mentors" className="relative py-20 bg-secondary/5">
         <div className="container">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-            <span className="text-secondary">CHOOSE</span> YOUR MENTOR
+            Choose Your Mentor
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "The Monk", color: "primary", desc: "Focus & Discipline Mentor", traits: ["Mental Clarity", "Emotional Mastery", "Mindfulness"] },
-              { name: "Fitness Coach", color: "secondary", desc: "Physical Transformation Mentor", traits: ["Strength", "Endurance", "Peak Performance"] },
-              { name: "Deep Work Master", color: "accent", desc: "Productivity Mentor", traits: ["Focus", "Deep Work", "Maximum Output"] },
-              { name: "Life Strategist", color: "primary", desc: "Life Design Mentor", traits: ["Strategy", "Decision Making", "Legacy Building"] },
+              { name: "The Monk", desc: "Focus & Discipline Mentor", traits: ["Mental Clarity", "Emotional Mastery", "Mindfulness"], image: "person-meditating" },
+              { name: "Fitness Coach", desc: "Physical Transformation Mentor", traits: ["Strength", "Endurance", "Peak Performance"], image: "person-fitness" },
+              { name: "Deep Work Master", desc: "Productivity Mentor", traits: ["Focus", "Deep Work", "Maximum Output"], image: "person-working-deep-focus" },
+              { name: "Life Strategist", desc: "Life Design Mentor", traits: ["Strategy", "Decision Making", "Legacy Building"], image: "team-collaboration" },
             ].map((mentor, idx) => (
               <div key={idx} className="group cursor-pointer">
-                <div className="relative h-64 rounded-lg overflow-hidden mb-4 neon-border">
+                <div className="relative h-64 rounded-lg overflow-hidden mb-4 shadow-md card-hover">
                   <img 
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/mentor-avatars-UJUCczHXBLYGgGqk3nykPn.webp" 
+                    src={mentor.image === "person-meditating" ? "https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/person-meditating-EKzucDKsF65G8pL4A4ZhVc.webp" : 
+                         mentor.image === "person-fitness" ? "https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/person-fitness-LZ4UGFJZXMtyp5YTjB4avT.webp" :
+                         mentor.image === "person-working-deep-focus" ? "https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/person-working-deep-focus-FBE2fcaSFCWzjHPDkEdAYd.webp" :
+                         "https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/team-collaboration-nuKYotLiibb6Si4wh49vqW.webp"}
                     alt={mentor.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                 </div>
@@ -250,7 +251,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground mb-3">{mentor.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {mentor.traits.map((trait, i) => (
-                    <span key={i} className="text-xs px-2 py-1 rounded bg-primary/20 text-primary">{trait}</span>
+                    <span key={i} className="text-xs px-2 py-1 rounded bg-primary/10 text-primary">{trait}</span>
                   ))}
                 </div>
               </div>
@@ -265,7 +266,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-bold">
-                <span className="text-primary">LEVEL UP</span> YOUR LIFE
+                Level Up Your Life
               </h2>
               <p className="text-lg text-muted-foreground">
                 Mentor AI uses proven gamification mechanics to keep you engaged and motivated. Every action compounds.
@@ -279,7 +280,7 @@ export default function Home() {
                   { title: "Leaderboards", desc: "Compete with friends or the global community. Climb the ranks." },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-bold mb-1">{item.title}</h4>
                       <p className="text-muted-foreground text-sm">{item.desc}</p>
@@ -289,11 +290,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative h-96 lg:h-full min-h-96">
+            <div className="relative h-96 lg:h-full min-h-96 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/gamification-dashboard-YGd7fdRLPGtFtCnXQhe.webp" 
-                alt="Gamification Dashboard" 
-                className="w-full h-full object-cover rounded-lg neon-border"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/team-collaboration-nuKYotLiibb6Si4wh49vqW.webp" 
+                alt="Team Growth and Collaboration" 
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -301,10 +302,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="relative py-20 bg-gradient-to-b from-background to-card/30">
+      <section id="testimonials" className="relative py-20 bg-secondary/5">
         <div className="container">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
-            <span className="text-secondary">REAL</span> TRANSFORMATIONS
+            Real Transformations
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -316,7 +317,7 @@ export default function Home() {
               { name: "James Rodriguez", role: "Freelancer", quote: "Finally, a tool that understands discipline isn't motivation—it's systems and accountability.", avatar: "👨‍💻" },
               { name: "Lisa Park", role: "Product Manager", quote: "The AI validation is incredible. It prevents cheating and ensures real effort.", avatar: "👩‍💼" },
             ].map((testimonial, idx) => (
-              <div key={idx} className="p-6 rounded-lg neon-border bg-card/50 hover:bg-card/80 transition">
+              <div key={idx} className="p-6 rounded-lg subtle-border bg-card/50 card-hover">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="text-3xl">{testimonial.avatar}</div>
                   <div>
@@ -338,17 +339,16 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/5"></div>
 
         <div className="container relative z-10 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            START BECOMING YOUR BEST VERSION TODAY
+            Start Becoming Your Best Version Today
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Stop consuming. Start becoming. Join thousands of users who are transforming their lives through discipline, accountability, and real challenges.
           </p>
-          <Button className="bg-primary text-background hover:bg-primary/80 uppercase font-bold text-lg py-8 px-12 neon-glow group text-xl">
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-lg py-8 px-12 group text-xl">
             Join Now
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
           </Button>
@@ -359,11 +359,11 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 border-t border-primary/20 bg-card/30">
+      <footer className="relative py-12 border-t border-border bg-card/30">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-xl font-bold neon-text-glow mb-4">MENTOR AI</div>
+              <div className="text-xl font-bold text-primary mb-4">MENTOR AI</div>
               <p className="text-sm text-muted-foreground">Your personal AI mentor for growth, discipline, and transformation.</p>
             </div>
             <div>
@@ -392,7 +392,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">&copy; 2026 Mentor AI. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="text-muted-foreground hover:text-primary transition">Twitter</a>
