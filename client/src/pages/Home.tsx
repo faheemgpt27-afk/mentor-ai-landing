@@ -106,58 +106,91 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 opacity-40"></div>
+        {/* Dynamic background with gradient and pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10"></div>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-40"></div>
 
-        <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                Stop Consuming
-                <br />
-                <span className="text-primary">Start Becoming</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-md">
-                Mentor AI gives you real challenges, tracks your growth, and holds you accountable. Your personal AI mentor that pushes you to grow — not just talk.
-              </p>
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-120px)]">
+            {/* Left Content - Takes 5 columns */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-6">
+                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <span className="text-sm font-bold text-primary uppercase tracking-wider">AI-Powered Mentorship</span>
+                </div>
+                
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  Stop
+                  <br />
+                  <span className="text-primary">Consuming</span>
+                  <br />
+                  Start
+                  <br />
+                  <span className="text-primary">Becoming</span>
+                </h1>
+                
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg font-light">
+                  Real challenges. Proof-based validation. AI accountability. Your personal mentor that doesn't motivate—it disciplines.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-base lg:text-lg py-6 px-8 group rounded-lg">
+                  Start Your Journey
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+                </Button>
+                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 uppercase font-bold text-base lg:text-lg py-6 px-8 rounded-lg">
+                  Try Demo
+                </Button>
+              </div>
+
+              {/* Social Proof - Enhanced */}
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+                <div className="space-y-2">
+                  <div className="text-4xl lg:text-5xl font-bold text-primary">10K+</div>
+                  <div className="text-sm text-muted-foreground font-medium">Active Users</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-4xl lg:text-5xl font-bold text-primary">4.9★</div>
+                  <div className="text-sm text-muted-foreground font-medium">User Rating</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-4xl lg:text-5xl font-bold text-primary">87%</div>
+                  <div className="text-sm text-muted-foreground font-medium">Success Rate</div>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-lg py-6 px-8 group">
-                Start Your Journey
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
-              </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 uppercase font-bold text-lg py-6 px-8">
-                Try Demo
-              </Button>
+            {/* Right Visual - Takes 7 columns with enhanced design */}
+            <div className="lg:col-span-7 relative">
+              <div className="relative group">
+                {/* Outer glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                
+                {/* Main image container */}
+                <div className="relative h-96 sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-primary/10">
+                  <img 
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/hero-real-mentor-BSQCKNyoQSm76LY7ekrpRA.webp" 
+                    alt="Mentor AI - Focused Professional" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+                
+                {/* Floating card overlay */}
+                <div className="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-8 bg-card border border-primary/20 rounded-xl p-6 shadow-xl max-w-xs">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+                    <span className="text-sm font-bold text-primary uppercase">Live Now</span>
+                  </div>
+                  <p className="text-sm text-foreground font-medium">"Mentor AI changed how I approach discipline. Real accountability, real results."</p>
+                  <div className="mt-3 text-xs text-muted-foreground">— Alex Chen, Software Engineer</div>
+                </div>
+              </div>
             </div>
-
-            {/* Social Proof */}
-            <div className="flex gap-8 pt-4">
-              <div>
-                <div className="text-3xl font-bold text-primary">10K+</div>
-                <div className="text-sm text-muted-foreground">Active Users</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">4.9★</div>
-                <div className="text-sm text-muted-foreground">User Rating</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">87%</div>
-                <div className="text-sm text-muted-foreground">Goal Success Rate</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Visual */}
-          <div className="relative h-96 lg:h-full min-h-96 rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663600664020/7YcsuUqY2fWM69qR8ZaZus/hero-real-mentor-BSQCKNyoQSm76LY7ekrpRA.webp" 
-              alt="Mentor AI - Focused Professional" 
-              className="w-full h-full object-cover float-up"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
