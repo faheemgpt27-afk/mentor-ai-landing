@@ -81,7 +81,9 @@ export default function Home() {
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold">Join Now</Button>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold">
+              <a href={import.meta.env.VITE_JOIN_NOW_URL}>Join Now</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,7 +121,9 @@ export default function Home() {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold mx-4">Join Now</Button>
+              <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold mx-4">
+                <a href={import.meta.env.VITE_JOIN_NOW_URL}>Join Now</a>
+              </Button>
             </div>
           </div>
         )}
@@ -159,12 +163,16 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-base lg:text-lg py-6 px-8 group rounded-lg">
-                  Start Your Journey
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-base lg:text-lg py-6 px-8 group rounded-lg">
+                  <a href={import.meta.env.VITE_START_JOURNEY_URL}>
+                    Start Your Journey
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+                  </a>
                 </Button>
-                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 uppercase font-bold text-base lg:text-lg py-6 px-8 rounded-lg">
-                  Try Demo
+                <Button asChild variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 uppercase font-bold text-base lg:text-lg py-6 px-8 rounded-lg">
+                  <a href={import.meta.env.VITE_TRY_DEMO_URL}>
+                    Try Demo
+                  </a>
                 </Button>
               </div>
 
@@ -470,9 +478,11 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Stop consuming. Start becoming. Join thousands of users who are transforming their lives through discipline, accountability, and real challenges.
           </p>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-lg py-8 px-12 group text-xl">
-            Join Now
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase font-bold text-lg py-8 px-12 group text-xl">
+            <a href={import.meta.env.VITE_JOIN_NOW_URL}>
+              Join Now
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+            </a>
           </Button>
           <p className="text-sm text-muted-foreground mt-6">
             Start free. No credit card required. Cancel anytime.
